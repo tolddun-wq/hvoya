@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 900" width="1100" height="900">
+  <!-- Пример плана для генератора: Г-образный дом 12 × 9 м, масштаб 70 px = 1 м, начало в (130,120) -->
+  <rect width="1100" height="900" fill="#FBF9F4"/>
+  <g stroke="#E4DED2" stroke-width="1">
+    <path d="M0 50H1100M0 120H1100M0 190H1100M0 260H1100M0 330H1100M0 400H1100M0 470H1100M0 540H1100M0 610H1100M0 680H1100M0 750H1100M0 820H1100"/>
+    <path d="M60 0V900M130 0V900M200 0V900M270 0V900M340 0V900M410 0V900M480 0V900M550 0V900M620 0V900M690 0V900M760 0V900M830 0V900M900 0V900M970 0V900M1040 0V900"/>
+  </g>
+  <!-- наружные стены -->
+  <path d="M130 120H970V470H690V750H130Z" fill="none" stroke="#1F241C" stroke-width="20" stroke-linejoin="miter"/>
+  <!-- перегородки -->
+  <g stroke="#1F241C" stroke-width="8">
+    <path d="M550 120V330M550 400V470M690 470V330M130 470H330M400 470H550M690 330H760M830 330H970"/>
+  </g>
+  <!-- окна: разрыв стены + тонкие линии -->
+  <g stroke="#FBF9F4" stroke-width="22">
+    <path d="M220 120H304M394 120H478M640 120H724M820 120H904M970 210V294M130 250V334M130 560V644M220 750H304M440 750H524M690 560V644"/>
+  </g>
+  <g stroke="#1F241C" stroke-width="2.5">
+    <path d="M220 114H304M220 126H304M394 114H478M394 126H478M640 114H724M640 126H724M820 114H904M820 126H904"/>
+    <path d="M964 210V294M976 210V294M124 250V334M136 250V334M124 560V644M136 560V644M220 744H304M220 756H304M440 744H524M440 756H524M684 560V644M696 560V644"/>
+  </g>
+  <!-- входная дверь -->
+  <path d="M760 470H830" stroke="#FBF9F4" stroke-width="22"/>
+  <path d="M760 470V540A70 70 0 0 0 830 470" fill="none" stroke="#1F241C" stroke-width="2.5"/>
+  <!-- подписи комнат -->
+  <g font-family="Arial, sans-serif" fill="#1F241C" text-anchor="middle">
+    <text x="340" y="290" font-size="22">Кухня-гостиная</text><text x="340" y="320" font-size="18" fill="#6B6F66">39,2 м²</text>
+    <text x="760" y="220" font-size="22">Спальня</text><text x="760" y="250" font-size="18" fill="#6B6F66">16,8 м²</text>
+    <text x="620" y="395" font-size="16">С/у</text>
+    <text x="830" y="410" font-size="18">Прихожая</text>
+    <text x="410" y="610" font-size="22">Спальня</text><text x="410" y="640" font-size="18" fill="#6B6F66">22,4 м²</text>
+  </g>
+  <!-- размеры -->
+  <g stroke="#1F241C" stroke-width="1.5" font-family="Arial, sans-serif" font-size="20" fill="#1F241C" text-anchor="middle">
+    <path d="M130 70H970M130 60V80M970 60V80M124 76l12-12M964 76l12-12"/>
+    <text x="550" y="58" stroke="none">12 000</text>
+    <path d="M80 120V750M70 120H90M70 750H90M74 126l12-12M74 756l12-12"/>
+    <text x="64" y="440" stroke="none" transform="rotate(-90 64 440)">9 000</text>
+    <path d="M1020 120V470M1010 120H1030M1010 470H1030M1014 126l12-12M1014 476l12-12"/>
+    <text x="1044" y="300" stroke="none" transform="rotate(90 1044 300)">5 000</text>
+    <path d="M130 800H690M130 790V810M690 790V810M124 806l12-12M684 806l12-12"/>
+    <text x="410" y="834" stroke="none">8 000</text>
+  </g>
+  <text x="1040" y="880" font-family="Arial, sans-serif" font-size="16" fill="#6B6F66" text-anchor="end">Пример плана · «Хвоя»</text>
+</svg>

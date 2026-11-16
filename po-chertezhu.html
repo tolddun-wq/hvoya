@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Дом по вашему чертежу&nbsp;— Хвоя</title>
+<meta name="description" content="Загрузите фото чертежа, обведите стены — и посмотрите свой дом в 3D со сметой по статьям. Чертёж остаётся на вашем устройстве.">
+<meta name="theme-color" content="#262E22">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/science-gothic-var-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/konf.css">
+<link rel="stylesheet" href="css/plan.css">
+<script type="importmap">{"imports":{"three":"./js/vendor/three/three.module.min.js"}}</script>
+</head>
+<body class="page-konf">
+
+<header class="nav solid" id="nav">
+  <a class="logo" href="index.html" aria-label="Хвоя, на главную"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2v20M12 7l-6 5M12 7l6 5M12 12l-7 6M12 12l7 6"/></svg>ХВОЯ</a>
+  <nav class="menu" id="menu" aria-label="Разделы">
+    <a href="proekty.html">Проекты</a>
+    <a href="konfigurator.html">Конфигуратор</a>
+    <a href="chto-vhodit.html">Что входит</a>
+    <a href="etapy.html">Этапы и сроки</a>
+    <a href="garantii.html">Гарантии</a>
+  </nav>
+  <a class="tel" href="tel:+70000000000" data-demo>+7 (000) 000-00-00<small>Петрозаводск, пн–сб</small></a>
+  <button class="btn" type="button" data-demo>Обсудить дом</button>
+  <button class="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="menu"><span class="bw">Меню</span><svg width="22" height="14" viewBox="0 0 22 14" aria-hidden="true"><path d="M0 1h22M0 7h22M0 13h22" stroke="currentColor" stroke-width="1.6"/></svg></button>
+</header>
+
+<main>
+<section class="k-head wrap">
+  <div>
+    <p class="kick">Свой чертёж</p>
+    <h1 class="h2">Дом по вашему<br><em>чертежу</em></h1>
+  </div>
+  <div class="k-intro">
+    <p class="lead">Сфотографируйте план, обведите наружные стены и отметьте окна и вход. Дом соберётся в&nbsp;3D, а смета посчитается по вашим размерам.</p>
+    <p class="small">Чертёж не уходит с вашего устройства: всё считается прямо в браузере.</p>
+  </div>
+</section>
+
+<section class="wrap p-grid">
+  <div class="p-left">
+    <div class="p-steps" aria-hidden="true"><span>1. Чертёж</span><span>2. Контур</span><span>3. Размер стены</span><span>4. Окна и вход</span></div>
+    <div class="p-tools" role="toolbar" aria-label="Инструменты">
+      <label class="chip p-file"><input type="file" id="pfile" accept="image/*" class="vh">Загрузить чертёж</label>
+      <button class="chip" type="button" id="pexample">Взять пример</button>
+      <span class="p-sep"></span>
+      <button class="chip" type="button" data-tool="draw" aria-pressed="true">Обвести заново</button>
+      <button class="chip" type="button" data-tool="scale">Размер стены</button>
+      <button class="chip" type="button" data-tool="win">Окно</button>
+      <button class="chip" type="button" data-tool="door">Вход</button>
+      <span class="p-sep"></span>
+      <button class="chip" type="button" id="pundo" aria-label="Отменить последнее действие">↶ Отменить</button>
+      <button class="chip" type="button" id="pclear">Очистить</button>
+    </div>
+    <div class="p-wrap" id="pwrap">
+      <canvas id="pcv" aria-label="Чертёж и контур дома"></canvas>
+      <div class="p-empty" id="pempty">
+        <p class="p-empty-t">С чего начнём?</p>
+        <div class="p-empty-a">
+          <label class="btn"><input type="file" class="vh" accept="image/*" onchange="var f=document.getElementById('pfile');f.files=this.files;f.dispatchEvent(new Event('change'))">Загрузить фото чертежа</label>
+          <button class="btn ghost-d" type="button" onclick="document.getElementById('pexample').click()">Посмотреть на примере</button>
+          <button class="link" type="button" id="pblank">или нарисовать по сетке</button>
+        </div>
+        <p class="small">Подойдёт фото плана из журнала, скан или рисунок от руки с размерами.</p>
+      </div>
+      <form class="p-scale" id="pscale" hidden>
+        <label for="pscaleIn">Длина этой стены, м</label>
+        <div><input id="pscaleIn" inputmode="decimal" autocomplete="off"><button class="btn" type="submit">Готово</button></div>
+        <span class="err" aria-live="polite"></span>
+        <button class="x" type="button" data-cancel aria-label="Отмена">×</button>
+      </form>
+    </div>
+    <p class="p-hint" id="phint" aria-live="polite"></p>
+    <p class="p-stat"><span id="pstat"></span> <span class="p-msg" id="pmsg"></span></p>
+  </div>
+
+  <aside class="p-right">
+    <div class="k-3d" id="view3d">
+      <div class="p-wait" id="pwait">Обведите контур — дом появится здесь</div>
+      <button class="k-go" type="button" id="go3d" hidden><span>Собрать в 3D</span><small>по вашему контуру</small></button>
+      <span class="k-hint">Тяните, чтобы повернуть</span>
+      <span class="k-cap">3D по вашему контуру: планировку и окна уточним в проекте</span>
+    </div>
+    <div class="p-opts" id="popts">
+      <div class="p-o"><span class="small">Этажность</span><div class="k-chips" data-k="floors"><button class="chip" data-v="1">1 этаж</button><button class="chip" data-v="1.5">С мансардой</button><button class="chip" data-v="2">2 этажа</button></div></div>
+      <div class="p-o"><span class="small">Кровля</span><div class="k-chips" data-k="roofShape"><button class="chip" data-v="gable">Двускатная</button><button class="chip" data-v="shed">Односкатная</button><button class="chip" data-v="flat">Плоская</button></div></div>
+      <div class="p-o" id="pRoofMat"><span class="small">Покрытие</span><div class="k-chips" data-k="roofMat"><button class="chip" data-v="falz">Фальц</button><button class="chip" data-v="tile">Металлочерепица</button><button class="chip" data-v="soft">Гибкая черепица</button></div></div>
+      <div class="p-o"><span class="small">Фасад</span><div class="k-chips" data-k="facade"><button class="chip" data-v="plank">Планкен</button><button class="chip" data-v="imit">Имитация бруса</button><button class="chip" data-v="panel">Фиброцемент</button><button class="chip" data-v="char">Обожжённая доска</button></div></div>
+      <div class="p-o"><span class="small">Фундамент</span><div class="k-chips" data-k="found"><button class="chip" data-v="piles">Сваи</button><button class="chip" data-v="strip">Лента</button><button class="chip" data-v="slab">Плита</button></div></div>
+    </div>
+    <div class="p-sum">
+      <div class="p-sum-h"><span class="small">Ориентировочно, работа и материалы</span><output class="k-total" id="ptotal">—</output><span class="small" id="pfacts"></span></div>
+      <ul class="k-lines" id="plines"></ul>
+      <div class="p-acts">
+        <button class="btn" type="button" id="psend" disabled>Отправить чертёж на расчёт <span class="ar">→</span></button>
+        <p class="small">Инженер проверит размеры по чертежу и пришлёт точную смету. В конфигураторе можно выбрать отделку и инженерию.</p>
+      </div>
+    </div>
+  </aside>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="logo" href="index.html" style="margin-bottom:24px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2v20M12 7l-6 5M12 7l6 5M12 12l-7 6M12 12l7 6"/></svg>ХВОЯ</a>
+        <p class="small" style="max-width:26em">Каркасные дома под ключ в Карелии. Одна цена за работу и материалы, гарантия на каркас 10&nbsp;лет.</p>
+      </div>
+      <div><h4>Дома</h4><ul><li><a href="proekty.html">Проекты</a></li><li><a href="konfigurator.html">Конфигуратор</a></li><li><a href="po-chertezhu.html">По своему чертежу</a></li></ul></div>
+      <div><h4>Как работаем</h4><ul><li><a href="etapy.html">Этапы и сроки</a></li><li><a href="garantii.html">Гарантии</a></li><li><a href="chto-vhodit.html">Что входит</a></li></ul></div>
+      <div>
+        <h4>Офис</h4>
+        <a class="big" href="tel:+70000000000" data-demo>+7 (000) 000-00-00</a>
+        <p class="small">Петрозаводск, ул.&nbsp;Правды,&nbsp;38, офис&nbsp;4<br>пн–пт 9:00–19:00, сб 10:00–16:00</p>
+      </div>
+    </div>
+    <div class="bottom"><span>© 2026 «Хвоя». Демо-сайт для портфолио: компания вымышлена, цены ориентировочные.</span><span>3D-детали сделаны в Blender</span></div>
+  </div>
+</footer>
+
+<div class="demo" id="demo" hidden role="dialog" aria-modal="true" aria-labelledby="demoT">
+  <div class="box">
+    <button class="x" type="button" data-close aria-label="Закрыть">×</button>
+    <span class="kick">Минутку</span>
+    <span class="it" id="demoT">Это пробный сайт</span>
+    <p>Компания «Хвоя» придумана для портфолио, чертёж никто не получит. Хотите такой же генератор домов для своей компании&nbsp;— напишите в Telegram.</p>
+    <a class="btn" href="https://t.me/isthisthedaggr" target="_blank" rel="noopener">Написать @isthisthedaggr <span class="ar">→</span></a>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/price.js"></script>
+<script src="js/site.js"></script>
+<script src="js/plan-editor.js"></script>
+<script src="js/plan-page.js"></script>
+</body>
+</html>

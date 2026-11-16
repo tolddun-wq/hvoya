@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Хвоя&nbsp;— каркасные дома под ключ в Карелии</title>
+<meta name="description" content="Проектируем и строим тёплые каркасные дома под ключ в Карелии. Цена фиксируется в договоре, оплата по этапам, фотоотчёт каждую пятницу. Конфигуратор со сметой по статьям.">
+<meta name="theme-color" content="#262E22">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/science-gothic-var-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <a class="logo" href="index.html" aria-label="Хвоя, на главную"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2v20M12 7l-6 5M12 7l6 5M12 12l-7 6M12 12l7 6"/></svg>ХВОЯ</a>
+  <nav class="menu" id="menu" aria-label="Разделы">
+    <a href="proekty.html">Проекты</a>
+    <a href="konfigurator.html">Конфигуратор</a>
+    <a href="chto-vhodit.html">Что входит</a>
+    <a href="etapy.html">Этапы и сроки</a>
+    <a href="garantii.html">Гарантии</a>
+  </nav>
+  <a class="tel" href="tel:+70000000000" data-demo>+7 (000) 000-00-00<small>Петрозаводск, пн–сб</small></a>
+  <button class="btn" type="button" data-demo>Обсудить дом</button>
+  <button class="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="menu"><span class="bw">Меню</span><svg width="22" height="14" viewBox="0 0 22 14" aria-hidden="true"><path d="M0 1h22M0 7h22M0 13h22" stroke="currentColor" stroke-width="1.6"/></svg></button>
+</header>
+
+<main>
+<!-- 1. Первый экран: дом, который можно потрогать -->
+<section class="hero" id="hero" aria-label="Каркасные дома среди сосен">
+  <div class="shot">
+    <img class="hero-img" id="heroImg" src="img/ph/onego-1600.jpg" srcset="img/ph/onego-800.jpg 800w, img/ph/onego-1600.jpg 1600w, img/ph/onego-2400.jpg 2400w" sizes="100vw" width="2400" height="1600" alt="Треугольный каркасный дом с витражом и террасой среди сосен">
+    <h1>Каркасные дома<em>среди сосен</em></h1>
+    <button class="spot" type="button" data-spot="glass" data-x=".499" data-y=".365" aria-expanded="false"><span class="dot">1</span><span class="lbl">Витраж 4,2&nbsp;м · 486&nbsp;000&nbsp;₽</span></button>
+    <button class="spot" type="button" data-spot="roof" data-x=".408" data-y=".47" aria-expanded="false"><span class="dot">2</span><span class="lbl">Кровля, фальц · 612&nbsp;000&nbsp;₽</span></button>
+    <button class="spot" type="button" data-spot="deck" data-x=".30" data-y=".706" aria-expanded="false"><span class="dot">3</span><span class="lbl">Терраса 24&nbsp;м² · 318&nbsp;000&nbsp;₽</span></button>
+    <button class="spot" type="button" data-spot="piles" data-x=".415" data-y=".905" aria-expanded="false"><span class="dot">4</span><span class="lbl">Сваи · 310&nbsp;000&nbsp;₽</span></button>
+    <div class="pop" id="pop" role="dialog" aria-live="polite" hidden></div>
+    <p class="meta">Фото для примера<span class="far"> · строим до 150&nbsp;км от Петрозаводска</span></p>
+  </div>
+  <p class="intro">Строим каркасные дома в&nbsp;Карелии по одной цене: работа и&nbsp;все материалы. <b>Нажмите на&nbsp;точки</b>&nbsp;— покажем, из чего собран дом и сколько стоит каждая часть.</p>
+  <aside class="hcard">
+    <p class="kick">Дом с фото · проект «Онего»</p>
+    <h2>96&nbsp;м², второй свет</h2>
+    <div class="row"><span>Под ключ, с&nbsp;материалами</span><b id="hcPrice">от 6&nbsp;483&nbsp;000&nbsp;₽</b></div>
+    <div class="row"><span>От фундамента до ключей</span><b id="hcWeeks">18 недель</b></div>
+    <a class="btn" href="konfigurator.html?p=onego">Пересобрать под себя <span class="ar">→</span></a>
+  </aside>
+</section>
+
+<!-- 2. Кто отвечает за дом -->
+<section class="sec" aria-labelledby="founderH">
+  <div class="wrap founder">
+    <figure>
+      <img src="img/ph/founder-800.jpg" srcset="img/ph/founder-800.jpg 800w, img/ph/founder-1600.jpg 1600w" sizes="(max-width:980px) 100vw, 40vw" width="800" height="1199" loading="lazy" alt="Мужчина с бородой в клетчатой рубашке на фоне осеннего леса">
+      <figcaption>Фото для примера</figcaption>
+    </figure>
+    <div>
+      <p class="kick" id="founderH">Кто отвечает за ваш дом</p>
+      <blockquote>«Пока каркас не принят мной лично, его не закрывают утеплителем. Это правило с первого дома.»</blockquote>
+      <div class="who">
+        <div><b>Иван Иванов</b><span class="small">основатель «Хвои», инженер-строитель</span></div>
+        <button class="link" type="button" data-demo style="margin-left:auto;white-space:nowrap">Написать Ивану</button>
+      </div>
+    </div>
+    <div class="promises">
+      <div><b>Мой номер в договоре</b><p>Звоните напрямую, если с прорабом не получается договориться. Отвечаю в тот же день.</p></div>
+      <div><b>Приезжаю трижды</b><p>На разметку фундамента, на приёмку каркаса и на сдачу дома. Остальное время на участке ваш прораб.</p></div>
+      <div><b>Строим сами</b><p>Две свои бригады плотников. Субподрядчики только на скважину и септик, и за них отвечаем мы.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Договор в пяти строках -->
+<section class="sec dark" aria-labelledby="termsH">
+  <div class="wrap terms">
+    <div class="side">
+      <p class="kick">Почему с нами не страшно</p>
+      <h2 class="h2" id="termsH" style="margin-top:16px">Договор<br><em>в пяти строках</em></h2>
+      <p class="small" style="margin-top:24px;max-width:24em">Полный текст договора можно прочитать до встречи&nbsp;— он лежит на странице «Гарантии».</p>
+      <img src="img/ph/work-hands-800.jpg" width="800" height="533" loading="lazy" alt="Руки плотника обрабатывают доску в мастерской">
+    </div>
+    <ol class="clauses">
+      <li><div><h3>Одна цена: работа и все материалы</h3><p>В смете каждая доска, мешок и саморез с ценой. Материалы закупаем сами и привозим своей машиной. Испортили или разбили&nbsp;— докупаем за свой счёт. Цена записана в договоре и меняется, только если вы сами что-то добавили.</p></div><span class="tag">всё включено</span></li>
+      <li><div><h3>Платите за сделанное, шестью частями</h3><p>Аванс 10&nbsp;%, дальше&nbsp;— после каждого из пяти этапов: фундамент, каркас с&nbsp;кровлей, тёплый контур, инженерия, отделка. Деньги вперёд за месяц работы не берём.</p></div><span class="tag">по этапам</span></li>
+      <li><div><h3>Фотоотчёт каждую пятницу</h3><p>Прораб присылает 20–30 фотографий и короткий текст: что сделали, что дальше, есть ли вопросы к вам. Даже если вы живёте в другом городе.</p></div><span class="tag">даже зимой</span></li>
+      <li><div><h3>Гарантия 10 лет на каркас</h3><p>5 лет на кровлю и окна, 2 года на инженерию. Если что-то случилось, приезжаем в течение трёх рабочих дней.</p></div><span class="tag">10 · 5 · 2</span></li>
+      <li><div><h3>За просрочку платим мы</h3><p>Дата сдачи стоит в договоре. За каждый день задержки по нашей вине&nbsp;— 0,1&nbsp;% от стоимости работ.</p></div><span class="tag">0,1&nbsp;% в день</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 4. До и после -->
+<section class="sec" aria-labelledby="baH">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="kick">Как дом появляется на участке</p><h2 class="h2" id="baH">От сосен<br><em>до ключей</em></h2></div>
+      <p class="lead">Тяните ползунок вправо&nbsp;— дом достраивается. Справа выбранный этап стройки, слева готовый дом. Этапы можно переключать.</p>
+    </div>
+    <div class="ba" id="ba" style="--x:38%">
+      <img class="stage" id="baStage" src="img/ph/stage-walls-1600.jpg" srcset="img/ph/stage-walls-800.jpg 800w, img/ph/stage-walls-1600.jpg 1600w" sizes="(max-width:640px) 100vw, 1312px" loading="lazy" alt="Плотники поднимают стеновую панель каркаса">
+      <img class="done" src="img/ph/shuya-1600.jpg" srcset="img/ph/shuya-800.jpg 800w, img/ph/shuya-1600.jpg 1600w" sizes="(max-width:640px) 100vw, 1312px" loading="lazy" alt="Готовый каркасный дом с фасадом из лиственницы и террасой">
+      <span class="t l">Неделя 18 · ключи</span><span class="t r" id="baTag">Неделя 6 · стены</span>
+      <p class="note" id="baNote">стены собираем прямо на&nbsp;участке&nbsp;— за&nbsp;три дня</p>
+      <span class="ph">Фото для примера</span>
+      <div class="line"></div><div class="knob" aria-hidden="true">⇆</div><span class="hint" aria-hidden="true">тяните вправо</span>
+      <input class="vh" type="range" min="0" max="100" value="38" aria-label="Сравнить готовый дом и этап стройки">
+    </div>
+    <div class="stages" role="group" aria-label="Этап стройки">
+      <button type="button" data-stage="foundation" aria-pressed="false"><b>1–2</b><span>Фундамент</span></button>
+      <button type="button" data-stage="frame" aria-pressed="false"><b>3–5</b><span>Каркас</span></button>
+      <button type="button" data-stage="walls" aria-pressed="true"><b>6</b><span>Стены</span></button>
+      <button type="button" data-stage="roof" aria-pressed="false"><b>7–9</b><span>Кровля</span></button>
+      <button type="button" data-stage="contour" aria-pressed="false"><b>10–12</b><span>Тёплый контур</span></button>
+    </div>
+    <div class="stage-text">
+      <h3 id="stTitle">Стены: панели собираем на участке и поднимаем вручную</h3>
+      <p id="stText">Каркас из сухой строганой доски 50×200, шаг стоек 600&nbsp;мм. В эту неделю Иван приезжает на приёмку: проверяет узлы, крепёж и геометрию, и только после этого бригада ставит утеплитель.</p>
+    </div>
+    <p style="margin-top:24px"><a class="link" href="etapy.html">Все этапы, сроки и платежи →</a></p>
+  </div>
+</section>
+
+<!-- 5. Сколько стоит -->
+<section class="sec dark" aria-labelledby="calcH">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="kick">Сколько стоит</p><h2 class="h2" id="calcH">Прикиньте<br><em>за минуту</em></h2></div>
+      <p class="lead">Три вопроса&nbsp;— и ориентировочная цена. Подробная смета по статьям: фундамент, стены, кровля, инженерия, отделка&nbsp;— в конфигураторе.</p>
+    </div>
+    <div class="calc" id="calc">
+      <div>
+        <div class="q">
+          <div class="ql"><label for="cArea">Площадь дома</label><output id="cAreaOut">120&nbsp;м²</output></div>
+          <input type="range" id="cArea" min="60" max="220" step="2" value="120">
+          <p class="hint" id="cAreaHint">как «Выг» или «Шуя»: 3 спальни</p>
+        </div>
+        <div class="q">
+          <div class="ql"><span>Этажность</span></div>
+          <div class="chips" role="group" aria-label="Этажность">
+            <button class="chip" type="button" data-floors="1" aria-pressed="false">1 этаж</button>
+            <button class="chip" type="button" data-floors="1.5" aria-pressed="true">С мансардой</button>
+            <button class="chip" type="button" data-floors="2" aria-pressed="false">2 этажа</button>
+          </div>
+        </div>
+        <div class="q">
+          <div class="ql"><span>Готовность</span></div>
+          <div class="chips" role="group" aria-label="Готовность">
+            <button class="chip" type="button" data-level="contour" aria-pressed="false">Тёплый контур</button>
+            <button class="chip" type="button" data-level="rough" aria-pressed="false">Под чистовую</button>
+            <button class="chip" type="button" data-level="turnkey" aria-pressed="true">Под ключ</button>
+          </div>
+          <p class="hint" id="cLevelHint">можно заезжать с чемоданом</p>
+        </div>
+      </div>
+      <div class="res">
+        <span class="small">Ориентировочно</span>
+        <output class="total" id="cTotal">8&nbsp;100&nbsp;000&nbsp;₽</output>
+        <ul class="lines" id="cLines"></ul>
+        <a class="btn" id="cGo" href="konfigurator.html">Подробная смета <span class="ar">→</span></a>
+        <a class="c-own" href="po-chertezhu.html">Есть свой чертёж? Соберите дом по нему →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Проекты -->
+<section class="sec" aria-labelledby="prH">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="kick">Готовые проекты</p><h2 class="h2" id="prH">Восемь домов,<br><em>любой можно изменить</em></h2></div>
+      <p class="lead">Проект входит в стоимость стройки. Можно сдвинуть стены, добавить спальню или террасу&nbsp;— из любого проекта открывается конфигуратор с его параметрами.</p>
+    </div>
+    <div class="pgrid" id="pgrid"></div>
+  </div>
+</section>
+
+<!-- 7. Люди -->
+<section class="sec" style="padding-top:0" aria-labelledby="peH">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="kick">Кто будет на вашем участке</p><h2 class="h2" id="peH">Одни и те же<br><em>люди до конца</em></h2></div>
+      <p class="lead">Прораб и бригада не меняются от фундамента до сдачи. Их имена и телефоны&nbsp;— в договоре, рядом с номером Ивана.</p>
+    </div>
+    <div class="people">
+      <figure class="p1"><img src="img/ph/work-frame-800.jpg" srcset="img/ph/work-frame-800.jpg 800w, img/ph/work-frame-1600.jpg 1600w" sizes="(max-width:640px) 78vw, 40vw" loading="lazy" alt="Плотник в каске крепит доски каркаса"><span class="ex">фото для примера</span><figcaption><b>Бригада из четырёх плотников</b>Своя, не наёмная на сезон. Собирает каркас, кровлю и фасад.</figcaption></figure>
+      <figure class="p2"><img src="img/ph/plan-drafting-800.jpg" srcset="img/ph/plan-drafting-800.jpg 800w, img/ph/plan-drafting-1600.jpg 1600w" sizes="(max-width:640px) 78vw, 25vw" loading="lazy" alt="Рука инженера с карандашом над чертежом"><span class="ex">фото для примера</span><figcaption><b>Инженер-сметчик</b>Считает смету по вашему участку и пересчитывает при каждом изменении.</figcaption></figure>
+      <figure class="p3"><img src="img/ph/founder-2-800.jpg" srcset="img/ph/founder-2-800.jpg 800w, img/ph/founder-2-1600.jpg 1600w" sizes="(max-width:640px) 78vw, 33vw" loading="lazy" alt="Мужчина в шапке и клетчатой рубашке на закате"><span class="ex">фото для примера</span><figcaption><b>Прораб</b>Один на весь срок. Каждую пятницу присылает фотоотчёт и отвечает на вопросы.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 8. Как живётся -->
+<section class="sec" style="padding-top:0" aria-label="Пример отзыва">
+  <div class="wrap">
+    <div class="review">
+      <img src="img/ph/clients-porch-1600.jpg" srcset="img/ph/clients-porch-800.jpg 800w, img/ph/clients-porch-1600.jpg 1600w" sizes="(max-width:980px) 100vw, 50vw" loading="lazy" alt="Пожилая пара отдыхает на крыльце деревянного дома">
+      <div class="q">
+        <p class="kick">Первая зима в доме</p>
+        <blockquote>«В январе за окном было минус тридцать, а дома двадцать два и ни одного сквозняка. По вечерам сидели на террасе в куртках с чаем&nbsp;— просто потому что красиво.»</blockquote>
+        <p class="small">Семья из Кондопоги, проект «Кивач»</p>
+        <p style="margin-top:16px"><span class="ex">пример отзыва · фото для примера</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. Финал -->
+<section class="sec" style="padding-top:0" aria-labelledby="finH">
+  <div class="wrap">
+    <div class="final">
+      <img src="img/ph/winter-evening-1600.jpg" srcset="img/ph/winter-evening-800.jpg 800w, img/ph/winter-evening-1600.jpg 1600w" sizes="(max-width:640px) 100vw, 1312px" loading="lazy" alt="Деревянный дом зимним вечером со светом в окнах">
+      <div class="in">
+        <p class="kick" style="color:rgba(255,255,255,.75)">Перед тем как решиться</p>
+        <h2 class="h2" id="finH">Приезжайте<br><em>на стройку</em></h2>
+        <p class="lead">Покажем дом, который строим сейчас: можно потрогать каркас, заглянуть в стену и поговорить с бригадой. Обычно это от&nbsp;40 до&nbsp;90&nbsp;минут езды от&nbsp;Петрозаводска.</p>
+        <div class="acts"><button class="btn light" type="button" data-demo>Записаться на объект <span class="ar">→</span></button><a class="soft" href="konfigurator.html">или сначала собрать дом</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="logo" href="index.html" style="margin-bottom:24px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2v20M12 7l-6 5M12 7l6 5M12 12l-7 6M12 12l7 6"/></svg>ХВОЯ</a>
+        <p class="small" style="max-width:26em">Каркасные дома под ключ в Карелии. Одна цена за работу и материалы, гарантия на каркас 10&nbsp;лет.</p>
+        <p class="note">Строим круглый год: зимой&nbsp;— на сваях, с тепловой пушкой и навесом.</p>
+      </div>
+      <div><h4>Дома</h4><ul><li><a href="proekty.html">Проекты</a></li><li><a href="konfigurator.html">Конфигуратор</a></li><li><a href="po-chertezhu.html">По своему чертежу</a></li><li><a href="chto-vhodit.html">Что входит</a></li></ul></div>
+      <div><h4>Как работаем</h4><ul><li><a href="etapy.html">Этапы и сроки</a></li><li><a href="garantii.html">Гарантии</a></li><li><a href="garantii.html#dogovor">Договор</a></li></ul></div>
+      <div>
+        <h4>Офис</h4>
+        <a class="big" href="tel:+70000000000" data-demo>+7 (000) 000-00-00</a>
+        <p class="small">Петрозаводск, ул.&nbsp;Правды,&nbsp;38, офис&nbsp;4<br>пн–пт 9:00–19:00, сб 10:00–16:00</p>
+      </div>
+    </div>
+    <div class="bottom"><span>© 2026 «Хвоя». Демо-сайт для портфолио: компания вымышлена, цены ориентировочные.</span><span>Фото с Unsplash, все подписаны «фото для примера»</span></div>
+  </div>
+</footer>
+
+<div class="demo" id="demo" hidden role="dialog" aria-modal="true" aria-labelledby="demoT">
+  <div class="box">
+    <button class="x" type="button" data-close aria-label="Закрыть">×</button>
+    <span class="kick">Минутку</span>
+    <span class="it" id="demoT">Это пробный сайт</span>
+    <p>Компания «Хвоя» придумана для портфолио, позвонить ей нельзя. Хотите такой же дизайн для своей компании&nbsp;— напишите в Telegram.</p>
+    <a class="btn" href="https://t.me/isthisthedaggr" target="_blank" rel="noopener">Написать @isthisthedaggr <span class="ar">→</span></a>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/price.js"></script>
+<script src="js/site.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Этапы и сроки стройки&nbsp;— Хвоя</title>
+<meta name="description" content="График стройки каркасного дома по неделям: фундамент, каркас и кровля, тёплый контур, инженерия, отделка. Платежи после каждого этапа.">
+<meta name="theme-color" content="#262E22">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/science-gothic-var-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/konf.css">
+<link rel="stylesheet" href="css/info.css">
+</head>
+<body class="page-info">
+
+<header class="nav solid" id="nav">
+  <a class="logo" href="index.html" aria-label="Хвоя, на главную"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2v20M12 7l-6 5M12 7l6 5M12 12l-7 6M12 12l7 6"/></svg>ХВОЯ</a>
+  <nav class="menu" id="menu" aria-label="Разделы">
+    <a href="proekty.html">Проекты</a>
+    <a href="konfigurator.html">Конфигуратор</a>
+    <a href="chto-vhodit.html">Что входит</a>
+    <a href="etapy.html" aria-current="page">Этапы и сроки</a>
+    <a href="garantii.html">Гарантии</a>
+  </nav>
+  <a class="tel" href="tel:+70000000000" data-demo>+7 (000) 000-00-00<small>Петрозаводск, пн–сб</small></a>
+  <button class="btn" type="button" data-demo>Обсудить дом</button>
+  <button class="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="menu"><span class="bw">Меню</span><svg width="22" height="14" viewBox="0 0 22 14" aria-hidden="true"><path d="M0 1h22M0 7h22M0 13h22" stroke="currentColor" stroke-width="1.6"/></svg></button>
+</header>
+
+<main>
+<section class="k-head wrap">
+  <div>
+    <p class="kick">Этапы и сроки</p>
+    <h1 class="h2">От первой сваи<br><em>до ключей</em></h1>
+  </div>
+  <div class="k-intro">
+    <p class="lead">Срок зависит от площади и отделки. Выберите проект&nbsp;— покажем график по неделям и сколько платить после каждого этапа.</p>
+    <div class="k-from" role="group" aria-label="Проект"><span class="small">Проект:</span><div class="k-chips" id="etProj"></div></div>
+  </div>
+</section>
+
+<section class="wrap i-plan" aria-label="График стройки">
+  <div class="i-plan-head">
+    <p><b id="etTotal"></b> <span class="small" id="etSub"></span></p>
+    <p class="small i-legend"><i class="lg-w"></i>работаем на участке <i class="lg-p"></i>платёж после этапа</p>
+  </div>
+  <div class="i-weeks" id="etAxis" aria-hidden="true"></div>
+  <ol class="i-rows" id="etRows"></ol>
+  <p class="small i-plan-note">До первой сваи проходит 2–3 недели: выезд на участок, проба грунта, смета, договор. В срок стройки они не входят.</p>
+</section>
+
+<section class="sec" aria-labelledby="youH">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="kick">Что нужно от вас</p><h2 class="h2" id="youH">Три встречи<br><em>на участке</em></h2></div>
+      <p class="lead">Остальное время можно жить в другом городе: каждую пятницу прораб присылает 20–30 фотографий и короткий отчёт.</p>
+    </div>
+    <ol class="i-meet">
+      <li><span class="i-n">1</span><img src="img/ph/stage-foundation-800.jpg" width="800" height="533" loading="lazy" alt="Разметка и винтовые сваи на участке в лесу"><b>Разметка дома</b><p>Неделя 1. Вместе с Иваном ставите колышки: где вход, куда смотрит витраж, где будет терраса.</p></li>
+      <li><span class="i-n">2</span><img src="img/ph/stage-frame-800.jpg" width="800" height="533" loading="lazy" alt="Деревянный каркас дома без обшивки"><b>Приёмка каркаса</b><p>Пока стены открыты, видно каждый узел. Можно сдвинуть розетку или добавить окно&nbsp;— потом это дороже.</p></li>
+      <li><span class="i-n">3</span><img src="img/ph/int-light-800.jpg" width="800" height="533" loading="lazy" alt="Светлая комната с деревянным полом и большим окном"><b>Сдача дома</b><p>Проходите по акту с прорабом, включаете всё, что включается. Ключи и гарантийный паспорт&nbsp;— в тот же день.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0" aria-labelledby="winH">
+  <div class="wrap i-winter">
+    <img src="img/ph/winter-1600.jpg" srcset="img/ph/winter-800.jpg 800w, img/ph/winter-1600.jpg 1600w" sizes="(max-width:980px) 100vw, 55vw" width="1600" height="1067" loading="lazy" alt="Деревянный дом в заснеженном лесу">
+    <div>
+      <p class="kick">Зимой не останавливаемся</p>
+      <h2 class="h2" id="winH">Стройка<br><em>круглый год</em></h2>
+      <p class="lead">Сваи крутим и в мороз, каркас из сухой доски не боится снега. Над открытым домом ставим навес, швы клеим при тёплой пушке.</p>
+      <p class="small">Срок зимой тот же. Единственное, что переносим на весну,&nbsp;— окраску фасада, если на улице ниже +5.</p>
+      <span class="ex">фото для примера</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="logo" href="index.html" style="margin-bottom:24px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2v20M12 7l-6 5M12 7l6 5M12 12l-7 6M12 12l7 6"/></svg>ХВОЯ</a>
+        <p class="small" style="max-width:26em">Каркасные дома под ключ в Карелии. Одна цена за работу и материалы, гарантия на каркас 10&nbsp;лет.</p>
+        <p class="note">Строим круглый год: зимой&nbsp;— на сваях, с тепловой пушкой и навесом.</p>
+      </div>
+      <div><h4>Дома</h4><ul><li><a href="proekty.html">Проекты</a></li><li><a href="konfigurator.html">Конфигуратор</a></li><li><a href="po-chertezhu.html">По своему чертежу</a></li><li><a href="chto-vhodit.html">Что входит</a></li></ul></div>
+      <div><h4>Как работаем</h4><ul><li><a href="etapy.html">Этапы и сроки</a></li><li><a href="garantii.html">Гарантии</a></li><li><a href="garantii.html#dogovor">Договор</a></li></ul></div>
+      <div>
+        <h4>Офис</h4>
+        <a class="big" href="tel:+70000000000" data-demo>+7 (000) 000-00-00</a>
+        <p class="small">Петрозаводск, ул.&nbsp;Правды,&nbsp;38, офис&nbsp;4<br>пн–пт 9:00–19:00, сб 10:00–16:00</p>
+      </div>
+    </div>
+    <div class="bottom"><span>© 2026 «Хвоя». Демо-сайт для портфолио: компания вымышлена, цены ориентировочные.</span><span>Фото с Unsplash, все подписаны «фото для примера»</span></div>
+  </div>
+</footer>
+
+<div class="demo" id="demo" hidden role="dialog" aria-modal="true" aria-labelledby="demoT">
+  <div class="box">
+    <button class="x" type="button" data-close aria-label="Закрыть">×</button>
+    <span class="kick">Минутку</span>
+    <span class="it" id="demoT">Это пробный сайт</span>
+    <p>Компания «Хвоя» придумана для портфолио, позвонить ей нельзя. Хотите такой же сайт для своей компании&nbsp;— напишите в Telegram.</p>
+    <a class="btn" href="https://t.me/isthisthedaggr" target="_blank" rel="noopener">Написать @isthisthedaggr <span class="ar">→</span></a>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/price.js"></script>
+<script src="js/site.js"></script>
+<script src="js/info.js"></script>
+</body>
+</html>

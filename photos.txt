@@ -1,0 +1,30 @@
+Фото сайта «Хвоя» — Unsplash (бесплатная лицензия Unsplash, без указания автора). На сайте все подписаны «фото для примера».
+
+https://images.unsplash.com/photo-1703782997454-8eb0d4d94e9c  → img/ph/onego-*.jpg
+https://images.unsplash.com/photo-1609319172668-8b4f021f3b7b  → img/ph/vyg-*.jpg
+https://images.unsplash.com/photo-1774884736128-841eabe693ce  → img/ph/kizhi-*.jpg
+https://images.unsplash.com/photo-1645125522229-7a2db57d1860  → img/ph/suna-*.jpg
+https://images.unsplash.com/photo-1595877244574-e90ce41ce089  → img/ph/ladoga-*.jpg
+https://images.unsplash.com/photo-1704307163247-cde12ba3ff28  → img/ph/shuya-*.jpg
+https://images.unsplash.com/photo-1704306830195-71ce5ae2c11e  → img/ph/kivach-*.jpg
+https://images.unsplash.com/photo-1782753307964-fe0a8f69f5bb  → img/ph/segozero-*.jpg
+https://images.unsplash.com/photo-1704902949428-65e05241291a  → img/ph/int-onego-*.jpg
+https://images.unsplash.com/photo-1759182519481-2b1c7797db13  → img/ph/int-light-*.jpg
+https://images.unsplash.com/photo-1610079732357-0d20c1a98ceb  → img/ph/stage-foundation-*.jpg
+https://images.unsplash.com/photo-1785585508606-36e0b82f4887  → img/ph/stage-frame-*.jpg
+https://images.unsplash.com/photo-1787422660647-3be04b53f8d2  → img/ph/stage-walls-*.jpg
+https://images.unsplash.com/photo-1676802037786-3697d60497ae  → img/ph/stage-roof-*.jpg
+https://images.unsplash.com/photo-1672627170267-fca17bb54156  → img/ph/stage-contour-*.jpg
+https://images.unsplash.com/photo-1787422660673-3fb482d28f94  → img/ph/stage-membrane-*.jpg
+https://images.unsplash.com/photo-1522071500372-f0fd8c452178  → img/ph/winter-*.jpg
+https://images.unsplash.com/photo-1677935975731-fda0963ee3e9  → img/ph/winter-evening-*.jpg
+https://images.unsplash.com/photo-1703783028657-5905a1662aa8  → img/ph/detail-deck-*.jpg
+
+Люди (все подписаны «фото для примера», это не реальные сотрудники):
+https://images.unsplash.com/photo-1603657657965-91c27ff4d31b  → img/ph/founder-*.jpg
+https://images.unsplash.com/photo-1578896654068-736f54d13fe0  → img/ph/founder-2-*.jpg
+https://images.unsplash.com/photo-1537645514784-74649bc5c683  → img/ph/clients-porch-*.jpg
+https://images.unsplash.com/photo-1631396326838-de37e5f8bcbc  → img/ph/work-hands-*.jpg
+https://images.unsplash.com/photo-1646324554833-f0b6a479fa5d  → img/ph/work-frame-*.jpg
+https://images.unsplash.com/photo-1503387837-b154d5074bd2  → img/ph/plan-drafting-*.jpg
+https://images.unsplash.com/photo-1655759738595-418970010986  → img/ph/couple-home-*.jpg

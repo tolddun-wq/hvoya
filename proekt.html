@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Проект дома&nbsp;— Хвоя</title>
+<meta name="description" content="Проект каркасного дома: планировка, состав комнат, 3D-модель и смета под ключ с материалами.">
+<meta name="theme-color" content="#262E22">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/science-gothic-var-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/konf.css">
+<link rel="stylesheet" href="css/catalog.css">
+<script type="importmap">{"imports":{"three":"./js/vendor/three/three.module.min.js"}}</script>
+</head>
+<body class="page-konf">
+
+<header class="nav solid" id="nav">
+  <a class="logo" href="index.html" aria-label="Хвоя, на главную"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2v20M12 7l-6 5M12 7l6 5M12 12l-7 6M12 12l7 6"/></svg>ХВОЯ</a>
+  <nav class="menu" id="menu" aria-label="Разделы">
+    <a href="proekty.html" aria-current="page">Проекты</a>
+    <a href="konfigurator.html">Конфигуратор</a>
+    <a href="chto-vhodit.html">Что входит</a>
+    <a href="etapy.html">Этапы и сроки</a>
+    <a href="garantii.html">Гарантии</a>
+  </nav>
+  <a class="tel" href="tel:+70000000000" data-demo>+7 (000) 000-00-00<small>Петрозаводск, пн–сб</small></a>
+  <button class="btn" type="button" data-demo>Обсудить дом</button>
+  <button class="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="menu"><span class="bw">Меню</span><svg width="22" height="14" viewBox="0 0 22 14" aria-hidden="true"><path d="M0 1h22M0 7h22M0 13h22" stroke="currentColor" stroke-width="1.6"/></svg></button>
+</header>
+
+<main>
+<div class="wrap pr-crumbs small"><a href="proekty.html">Проекты</a> <span aria-hidden="true">/</span> <span id="crumb">Проект</span></div>
+<section class="wrap pr-hero" id="hero">
+  <figure class="pr-photo"><img id="photo" src="img/ph/onego-1600.jpg" alt="" width="1600" height="1067"><figcaption>Фото для примера</figcaption></figure>
+  <div class="pr-info">
+    <p class="kick" id="kind"></p>
+    <h1 class="h2" id="name">Проект</h1>
+    <p class="lead" id="text"></p>
+    <div class="pr-card">
+    <dl class="pr-facts" id="facts"></dl>
+    <div class="pr-price"><span class="small">Под ключ, работа и материалы</span><b id="price"></b><span class="small" id="pricenote"></span></div>
+    <div class="pr-acts"><a class="btn" id="toKonf" href="konfigurator.html">Изменить <span class="ar">→</span></a><button class="btn ghost-d" type="button" data-demo>Обсудить</button></div>
+    </div>
+  </div>
+</section>
+<section class="sec" aria-labelledby="planH">
+  <div class="wrap">
+    <div class="sec-head"><div><p class="kick">Планировка</p><h2 class="h2" id="planH">Комнаты<br><em>и площади</em></h2></div><p class="lead">Схема по составу помещений. Окна, лестницу и перегородки инженер привяжет к вашему участку и сторонам света.</p></div>
+    <div class="pr-plan" id="plans"></div>
+  </div>
+</section>
+<section class="sec pr-3d-sec" aria-labelledby="h3d">
+  <div class="wrap pr-3d-grid">
+    <div><p class="kick">3D-модель</p><h2 class="h2" id="h3d">Как он<br><em>будет выглядеть</em></h2><p class="lead" id="mat3d"></p></div>
+    <div class="k-3d" id="view3d">
+      <img class="k-poster" id="poster" alt="Рендер дома" width="1400" height="860">
+      <button class="k-go" type="button" id="go3d"><span>Покрутить в 3D</span><small>с материалами этого проекта</small></button>
+      <span class="k-hint">Тяните, чтобы повернуть</span>
+      <span class="k-cap">3D-модель для примера: окна и планировка уточняются в проекте</span>
+    </div>
+  </div>
+</section>
+<section class="sec" aria-labelledby="hEst">
+  <div class="wrap pr-est">
+    <div><p class="kick">Из чего цена</p><h2 class="h2" id="hEst">Смета<br><em>по статьям</em></h2><p class="lead">Ориентировочно, по нашей модели цен. Точную смету считаем после выезда на участок.</p><a class="link" id="toKonf2" href="konfigurator.html">Поменять отделку, кровлю или фундамент →</a></div>
+    <div class="pr-est-box"><ul class="k-lines" id="lines"></ul><div class="pr-est-t"><span>Итого</span><b id="total"></b></div><p class="small" id="matwork"></p><h3 class="pr-h3">Как платить</h3><ol class="pays" id="pays"></ol></div>
+  </div>
+</section>
+<section class="sec" aria-labelledby="hMore">
+  <div class="wrap">
+    <div class="sec-head"><div><p class="kick">Ещё проекты</p><h2 class="h2" id="hMore">Посмотрите<br><em>соседние</em></h2></div><a class="link" href="proekty.html">Все проекты →</a></div>
+    <div class="c-grid c-grid-3" id="more"></div>
+  </div>
+</section>
+<section class="wrap pr-missing" id="missing" hidden>
+  <p class="c-empty-t">Такого проекта нет</p>
+  <p class="small">Возможно, ссылка устарела. Посмотрите все проекты или соберите свой дом.</p>
+  <div class="c-empty-a"><a class="btn" href="proekty.html">Все проекты <span class="ar">→</span></a></div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="logo" href="index.html" style="margin-bottom:24px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2v20M12 7l-6 5M12 7l6 5M12 12l-7 6M12 12l7 6"/></svg>ХВОЯ</a>
+        <p class="small" style="max-width:26em">Каркасные дома под ключ в Карелии. Одна цена за работу и материалы, гарантия на каркас 10&nbsp;лет.</p>
+        <p class="note">Строим круглый год: зимой&nbsp;— на сваях, с тепловой пушкой и навесом.</p>
+      </div>
+      <div><h4>Дома</h4><ul><li><a href="proekty.html">Проекты</a></li><li><a href="konfigurator.html">Конфигуратор</a></li><li><a href="po-chertezhu.html">По своему чертежу</a></li><li><a href="chto-vhodit.html">Что входит</a></li></ul></div>
+      <div><h4>Как работаем</h4><ul><li><a href="etapy.html">Этапы и сроки</a></li><li><a href="garantii.html">Гарантии</a></li><li><a href="garantii.html#dogovor">Договор</a></li></ul></div>
+      <div>
+        <h4>Офис</h4>
+        <a class="big" href="tel:+70000000000" data-demo>+7 (000) 000-00-00</a>
+        <p class="small">Петрозаводск, ул.&nbsp;Правды,&nbsp;38, офис&nbsp;4<br>пн–пт 9:00–19:00, сб 10:00–16:00</p>
+      </div>
+    </div>
+    <div class="bottom"><span>© 2026 «Хвоя». Демо-сайт для портфолио: компания вымышлена, цены ориентировочные.</span><span>Фото с Unsplash, все подписаны «фото для примера»</span></div>
+  </div>
+</footer>
+
+<div class="demo" id="demo" hidden role="dialog" aria-modal="true" aria-labelledby="demoT">
+  <div class="box">
+    <button class="x" type="button" data-close aria-label="Закрыть">×</button>
+    <span class="kick">Минутку</span>
+    <span class="it" id="demoT">Это пробный сайт</span>
+    <p>Компания «Хвоя» придумана для портфолио, позвонить ей нельзя. Хотите такой же сайт для своей компании&nbsp;— напишите в Telegram.</p>
+    <a class="btn" href="https://t.me/isthisthedaggr" target="_blank" rel="noopener">Написать @isthisthedaggr <span class="ar">→</span></a>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/price.js"></script>
+<script src="js/site.js"></script>
+<script src="js/catalog.js"></script>
+</body>
+</html>

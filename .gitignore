@@ -1,0 +1,7 @@
+.shots/
+concepts*.png
+Thumbs.db
+.DS_Store
+.vercel/
+tools/
+behance/

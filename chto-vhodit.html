@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Что входит в дом под ключ&nbsp;— Хвоя</title>
+<meta name="description" content="Три уровня готовности каркасного дома: тёплый контур, под чистовую и под ключ. Что делаем мы, что остаётся вам и чего нет в цене.">
+<meta name="theme-color" content="#262E22">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/science-gothic-var-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/konf.css">
+<link rel="stylesheet" href="css/info.css">
+</head>
+<body class="page-info">
+
+<header class="nav solid" id="nav">
+  <a class="logo" href="index.html" aria-label="Хвоя, на главную"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2v20M12 7l-6 5M12 7l6 5M12 12l-7 6M12 12l7 6"/></svg>ХВОЯ</a>
+  <nav class="menu" id="menu" aria-label="Разделы">
+    <a href="proekty.html">Проекты</a>
+    <a href="konfigurator.html">Конфигуратор</a>
+    <a href="chto-vhodit.html" aria-current="page">Что входит</a>
+    <a href="etapy.html">Этапы и сроки</a>
+    <a href="garantii.html">Гарантии</a>
+  </nav>
+  <a class="tel" href="tel:+70000000000" data-demo>+7 (000) 000-00-00<small>Петрозаводск, пн–сб</small></a>
+  <button class="btn" type="button" data-demo>Обсудить дом</button>
+  <button class="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="menu"><span class="bw">Меню</span><svg width="22" height="14" viewBox="0 0 22 14" aria-hidden="true"><path d="M0 1h22M0 7h22M0 13h22" stroke="currentColor" stroke-width="1.6"/></svg></button>
+</header>
+
+<main>
+<section class="k-head wrap">
+  <div>
+    <p class="kick">Что входит в цену</p>
+    <h1 class="h2">«Под ключ»&nbsp;—<br><em>это сколько работы?</em></h1>
+  </div>
+  <div class="k-intro">
+    <p class="lead">Дом можно взять на трёх уровнях готовности. Выберите проект и уровень&nbsp;— отметим, что сделаем мы, а что останется вам, и пересчитаем цену.</p>
+    <p class="small">Цены ориентировочные, с работой и всеми материалами. Точную смету считаем после выезда на участок.</p>
+  </div>
+</section>
+
+<section class="wrap i-scope" aria-label="Состав работ по уровню готовности">
+  <div class="i-pick">
+    <div class="i-pick-row"><span class="small">Проект</span><div class="k-chips" id="vhProj" role="group" aria-label="Проект"></div></div>
+    <div class="i-pick-row"><span class="small">Готовность</span><div class="i-levels" id="vhLevel" role="group" aria-label="Уровень готовности">
+      <button type="button" data-l="contour" aria-pressed="false"><b>Тёплый контур</b><span>коробка с окнами, утеплена, закрыта</span></button>
+      <button type="button" data-l="rough" aria-pressed="false"><b>Под чистовую</b><span>плюс свет, вода, отопление и черновые стены</span></button>
+      <button type="button" data-l="key" aria-pressed="true"><b>Под ключ</b><span>можно заезжать с чемоданом</span></button>
+    </div></div>
+  </div>
+  <div class="i-grid">
+    <div class="i-layers" id="vhLayers"></div>
+    <aside class="i-sum" aria-live="polite">
+      <figure class="i-sum-ph"><img id="vhImg" src="img/ph/shuya-800.jpg" width="800" height="533" alt=""><figcaption>Фото для примера</figcaption></figure>
+      <p class="small" id="vhName">Шуя, 128&nbsp;м²</p>
+      <b class="i-total" id="vhTotal"></b>
+      <p class="small" id="vhSplit"></p>
+      <div class="i-facts"><div><b id="vhWeeks"></b><span>срок</span></div><div><b id="vhLeft"></b><span>останется вам</span></div></div>
+      <a class="btn" id="vhGo" href="konfigurator.html">Открыть смету <span class="ar">→</span></a>
+    </aside>
+  </div>
+</section>
+
+<section class="sec dark" aria-labelledby="notH">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="kick">Честно о том, чего нет в цене</p><h2 class="h2" id="notH">Это считаем<br><em>отдельно</em></h2></div>
+      <p class="lead">Эти расходы зависят от участка, а не от дома. Называем их до договора, чтобы потом не было сюрпризов.</p>
+    </div>
+    <ul class="i-not">
+      <li><b>Подключение к электросети</b><p>Заявку в сетевую компанию подаём за вас. Платите по её тарифу: для дома до 15&nbsp;кВт это обычно десятки тысяч рублей, а не сотни.</p><span>по тарифу сетей</span></li>
+      <li><b>Расчистка участка</b><p>Спил деревьев под пятно дома, корчевание, вывоз. Считаем на выезде: на чистом участке её нет совсем.</p><span>после выезда</span></li>
+      <li><b>Дорога для техники</b><p>Если к участку не проедет машина с доской и кран для витража, отсыпаем временный заезд щебнем.</p><span>если нужна</span></li>
+      <li><b>Скважина и септик</b><p>Можно добавить в смету опцией: бурим сами вместе с партнёром и отвечаем за результат.</p><span>опция, 420&nbsp;000&nbsp;₽</span></li>
+      <li><b>Мебель, кухня, техника</b><p>Не продаём и не наценяем. Можем дать размеры ниш и розеток под вашу кухню ещё на этапе проекта.</p><span>не делаем</span></li>
+      <li><b>Забор, баня, ландшафт</b><p>Строим только дом и террасу. Хороших подрядчиков на остальное подскажем.</p><span>не делаем</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="ownH">
+  <div class="wrap i-own">
+    <div><p class="kick">Если что-то хотите сделать сами</p><h2 class="h2" id="ownH">Вычеркнем<br><em>из сметы</em></h2></div>
+    <div>
+      <p class="lead">Многие берут тёплый контур и делают отделку сами или со своим мастером. Так можно: вычеркнутое не входит ни в цену, ни в гарантию, а всё остальное остаётся как в договоре.</p>
+      <p class="i-acts"><a class="btn" href="konfigurator.html">Собрать свою смету <span class="ar">→</span></a><a class="link" href="etapy.html">Сколько это займёт по времени →</a></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="logo" href="index.html" style="margin-bottom:24px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2v20M12 7l-6 5M12 7l6 5M12 12l-7 6M12 12l7 6"/></svg>ХВОЯ</a>
+        <p class="small" style="max-width:26em">Каркасные дома под ключ в Карелии. Одна цена за работу и материалы, гарантия на каркас 10&nbsp;лет.</p>
+        <p class="note">Строим круглый год: зимой&nbsp;— на сваях, с тепловой пушкой и навесом.</p>
+      </div>
+      <div><h4>Дома</h4><ul><li><a href="proekty.html">Проекты</a></li><li><a href="konfigurator.html">Конфигуратор</a></li><li><a href="po-chertezhu.html">По своему чертежу</a></li><li><a href="chto-vhodit.html">Что входит</a></li></ul></div>
+      <div><h4>Как работаем</h4><ul><li><a href="etapy.html">Этапы и сроки</a></li><li><a href="garantii.html">Гарантии</a></li><li><a href="garantii.html#dogovor">Договор</a></li></ul></div>
+      <div>
+        <h4>Офис</h4>
+        <a class="big" href="tel:+70000000000" data-demo>+7 (000) 000-00-00</a>
+        <p class="small">Петрозаводск, ул.&nbsp;Правды,&nbsp;38, офис&nbsp;4<br>пн–пт 9:00–19:00, сб 10:00–16:00</p>
+      </div>
+    </div>
+    <div class="bottom"><span>© 2026 «Хвоя». Демо-сайт для портфолио: компания вымышлена, цены ориентировочные.</span><span>Фото с Unsplash, все подписаны «фото для примера»</span></div>
+  </div>
+</footer>
+
+<div class="demo" id="demo" hidden role="dialog" aria-modal="true" aria-labelledby="demoT">
+  <div class="box">
+    <button class="x" type="button" data-close aria-label="Закрыть">×</button>
+    <span class="kick">Минутку</span>
+    <span class="it" id="demoT">Это пробный сайт</span>
+    <p>Компания «Хвоя» придумана для портфолио, позвонить ей нельзя. Хотите такой же сайт для своей компании&nbsp;— напишите в Telegram.</p>
+    <a class="btn" href="https://t.me/isthisthedaggr" target="_blank" rel="noopener">Написать @isthisthedaggr <span class="ar">→</span></a>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/price.js"></script>
+<script src="js/site.js"></script>
+<script src="js/info.js"></script>
+</body>
+</html>

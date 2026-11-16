@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Конфигуратор дома и смета&nbsp;— Хвоя</title>
+<meta name="description" content="Соберите каркасный дом: площадь, этажность, стены, кровля, фундамент, отделка и инженерия. Смета по статьям с материалами и работой пересчитывается сразу.">
+<meta name="theme-color" content="#262E22">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/science-gothic-var-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/konf.css">
+<script type="importmap">{"imports":{"three":"./js/vendor/three/three.module.min.js"}}</script>
+<link rel="modulepreload" href="js/house3d.js">
+</head>
+<body class="page-konf">
+
+<header class="nav solid" id="nav">
+  <a class="logo" href="index.html" aria-label="Хвоя, на главную"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2v20M12 7l-6 5M12 7l6 5M12 12l-7 6M12 12l7 6"/></svg>ХВОЯ</a>
+  <nav class="menu" id="menu" aria-label="Разделы">
+    <a href="proekty.html">Проекты</a>
+    <a href="konfigurator.html" aria-current="page">Конфигуратор</a>
+    <a href="chto-vhodit.html">Что входит</a>
+    <a href="etapy.html">Этапы и сроки</a>
+    <a href="garantii.html">Гарантии</a>
+  </nav>
+  <a class="tel" href="tel:+70000000000" data-demo>+7 (000) 000-00-00<small>Петрозаводск, пн–сб</small></a>
+  <button class="btn" type="button" data-demo>Обсудить дом</button>
+  <button class="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="menu"><span class="bw">Меню</span><svg width="22" height="14" viewBox="0 0 22 14" aria-hidden="true"><path d="M0 1h22M0 7h22M0 13h22" stroke="currentColor" stroke-width="1.6"/></svg></button>
+</header>
+
+<main>
+<section class="k-head wrap">
+  <div>
+    <p class="kick">Конфигуратор и смета</p>
+    <h1 class="h2">Соберите дом<br><em>и посмотрите смету</em></h1>
+  </div>
+  <div class="k-intro">
+    <p class="lead">Меняйте параметры&nbsp;— 3D-модель дома и смета пересчитываются сразу. В цене работа и все материалы с доставкой.</p>
+    <div class="k-from" role="group" aria-label="Начать с проекта">
+      <span class="small">Начать с проекта:</span>
+      <div class="k-chips" id="presets"></div>
+    </div>
+    <p class="k-own small">Есть свой чертёж? <a class="link" href="po-chertezhu.html">Соберите дом по нему&nbsp;→</a></p>
+  </div>
+</section>
+
+<section class="wrap k-grid">
+  <!-- Параметры -->
+  <form class="k-form" id="form" onsubmit="return false" aria-label="Параметры дома">
+    <fieldset class="q">
+      <legend><span class="n">01</span>Площадь дома</legend>
+      <div class="area-row"><input type="range" id="area" name="area" min="50" max="240" step="2" value="120" aria-label="Площадь дома, м²"><output id="areaOut" for="area">120&nbsp;м²</output></div>
+      <p class="hint" id="areaHint"></p>
+    </fieldset>
+    <fieldset class="q" data-group="floors"><legend><span class="n">02</span>Этажность</legend><div class="opts" id="o-floors"></div></fieldset>
+    <fieldset class="q" data-group="wall"><legend><span class="n">03</span>Стены</legend><div class="opts" id="o-wall"></div></fieldset>
+    <fieldset class="q" data-group="roof"><legend><span class="n">04</span>Кровля</legend><div class="opts" id="o-roof"></div></fieldset>
+    <fieldset class="q" data-group="found"><legend><span class="n">05</span>Фундамент</legend><div class="opts" id="o-found"></div></fieldset>
+    <fieldset class="q" data-group="facade"><legend><span class="n">06</span>Фасад</legend><div class="opts" id="o-facade"></div></fieldset>
+    <fieldset class="q" data-group="finish"><legend><span class="n">07</span>Отделка внутри</legend><div class="opts" id="o-finish"></div></fieldset>
+    <fieldset class="q" data-group="eng"><legend><span class="n">08</span>Инженерные системы <span class="small">можно несколько</span></legend><div class="opts" id="o-eng"></div></fieldset>
+    <fieldset class="q">
+      <legend><span class="n">09</span>Дополнительно</legend>
+      <div class="area-row"><label for="terrace" class="small">Терраса</label><input type="range" id="terrace" min="0" max="60" step="2" value="16" aria-label="Терраса, м²"><output id="terOut" for="terrace">16&nbsp;м²</output></div>
+      <label class="check"><input type="checkbox" id="glass"><span><b>Витраж во всю высоту</b><small>как на доме «Онего», +486&nbsp;000&nbsp;₽</small></span></label>
+    </fieldset>
+  </form>
+
+  <!-- Чертёж и итог -->
+  <aside class="k-side" aria-label="Ваш дом">
+    <div class="k-board">
+      <div class="k-3d" id="view3d">
+        <img class="k-poster" id="poster" alt="Рендер каркасного дома с выбранной формой" width="1400" height="860">
+        <button class="k-go" type="button" id="go3d"><span>Покрутить в 3D</span><small>модель меняется вместе с параметрами</small></button>
+        <span class="k-hint" id="hint3d">Тяните, чтобы повернуть · колесо — приблизить</span>
+        <span class="k-cap">3D-модель для примера: планировка и окна уточняются в проекте</span>
+      </div>
+      <div class="k-sum">
+        <div><span class="small">Ориентировочно, с материалами</span><output class="k-total" id="total" aria-live="polite">—</output></div>
+        <div class="k-facts">
+          <span><b id="fMat">—</b>материалы</span>
+          <span><b id="fWork">—</b>работа</span>
+          <span><b id="fWeeks">—</b>срок</span>
+        </div>
+      </div>
+      <ul class="k-lines" id="lines"></ul>
+      <a class="btn" href="#doc">Смета документом <span class="ar">↓</span></a>
+    </div>
+  </aside>
+</section>
+
+<!-- Смета-документ -->
+<section class="k-docwrap" id="doc" aria-labelledby="docH">
+  <div class="wrap">
+    <article class="sheet" id="sheet">
+      <header class="sheet-head">
+        <div class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2v20M12 7l-6 5M12 7l6 5M12 12l-7 6M12 12l7 6"/></svg>ХВОЯ</div>
+        <div class="sheet-meta"><span id="docNo">Смета №</span><span id="docDate"></span></div>
+      </header>
+      <h2 id="docH">Ориентировочная смета на&nbsp;каркасный дом</h2>
+      <p class="sheet-sub" id="docSub"></p>
+      <div class="sheet-table" role="table" aria-label="Смета по статьям">
+        <div class="tr th" role="row"><span role="columnheader">Статья</span><span role="columnheader">Материалы</span><span role="columnheader">Работа</span><span role="columnheader">Итого</span></div>
+        <div id="docRows"></div>
+        <div class="tr tt" role="row"><span role="cell">Итого, работа и материалы</span><span role="cell" id="dMat"></span><span role="cell" id="dWork"></span><span role="cell" id="dTotal"></span></div>
+      </div>
+      <div class="sheet-cols">
+        <div>
+          <h3>Как платить</h3>
+          <ol class="pays" id="pays"></ol>
+        </div>
+        <div>
+          <h3>Что важно знать</h3>
+          <ul class="notes">
+            <li>Цена ориентировочная. Точную смету считаем после выезда на участок и анализа грунта — бесплатно.</li>
+            <li>После подписания договора цена не меняется, если вы сами ничего не добавили.</li>
+            <li>Материалы закупаем и возим сами. Испортили или разбили — докупаем за свой счёт.</li>
+            <li>Срок <b id="dWeeks"></b> от начала фундамента до ключей. За просрочку по нашей вине — 0,1&nbsp;% в день.</li>
+          </ul>
+        </div>
+      </div>
+      <footer class="sheet-foot">
+        <span>«Хвоя», Петрозаводск, ул.&nbsp;Правды,&nbsp;38 · демо-сайт, компания вымышлена</span>
+        <span>Смета действительна 30&nbsp;дней</span>
+      </footer>
+    </article>
+    <div class="sheet-acts">
+      <button class="btn" type="button" id="send">Отправить на консультацию <span class="ar">→</span></button>
+      <button class="btn ghost" type="button" id="print">Сохранить в PDF</button>
+      <button class="btn ghost" type="button" id="copy">Скопировать ссылку на смету</button>
+      <span class="small" id="copied" aria-live="polite"></span>
+    </div>
+  </div>
+</section>
+
+<!-- Телефон: итог всегда под рукой -->
+<div class="k-bar" id="bar">
+  <div><span class="small">Ориентировочно</span><b id="barTotal">—</b></div>
+  <a class="btn light" href="#doc">Смета ↓</a>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="logo" href="index.html" style="margin-bottom:24px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2v20M12 7l-6 5M12 7l6 5M12 12l-7 6M12 12l7 6"/></svg>ХВОЯ</a>
+        <p class="small" style="max-width:26em">Каркасные дома под ключ в Карелии. Одна цена за работу и материалы, гарантия на каркас 10&nbsp;лет.</p>
+        <p class="note">Строим круглый год: зимой&nbsp;— на сваях, с тепловой пушкой и навесом.</p>
+      </div>
+      <div><h4>Дома</h4><ul><li><a href="proekty.html">Проекты</a></li><li><a href="konfigurator.html">Конфигуратор</a></li><li><a href="po-chertezhu.html">По своему чертежу</a></li><li><a href="chto-vhodit.html">Что входит</a></li></ul></div>
+      <div><h4>Как работаем</h4><ul><li><a href="etapy.html">Этапы и сроки</a></li><li><a href="garantii.html">Гарантии</a></li><li><a href="garantii.html#dogovor">Договор</a></li></ul></div>
+      <div>
+        <h4>Офис</h4>
+        <a class="big" href="tel:+70000000000" data-demo>+7 (000) 000-00-00</a>
+        <p class="small">Петрозаводск, ул.&nbsp;Правды,&nbsp;38, офис&nbsp;4<br>пн–пт 9:00–19:00, сб 10:00–16:00</p>
+      </div>
+    </div>
+    <div class="bottom"><span>© 2026 «Хвоя». Демо-сайт для портфолио: компания вымышлена, цены ориентировочные.</span><span>Фото с Unsplash, все подписаны «фото для примера»</span></div>
+  </div>
+</footer>
+
+<div class="demo" id="demo" hidden role="dialog" aria-modal="true" aria-labelledby="demoT">
+  <div class="box">
+    <button class="x" type="button" data-close aria-label="Закрыть">×</button>
+    <span class="kick">Минутку</span>
+    <span class="it" id="demoT">Это пробный сайт</span>
+    <p>Компания «Хвоя» придумана для портфолио, смету никто не получит. Хотите такой же сайт с конфигуратором для своей компании&nbsp;— напишите в Telegram.</p>
+    <a class="btn" href="https://t.me/isthisthedaggr" target="_blank" rel="noopener">Написать @isthisthedaggr <span class="ar">→</span></a>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/price.js"></script>
+<script src="js/site.js"></script>
+<script src="js/konf.js"></script>
+</body>
+</html>
