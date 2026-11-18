@@ -142,18 +142,23 @@
     return ps[0];
   }
   function calc() {
-    var L = H.levels[st.level], F = H.floors[st.floors];
-    var total = Math.round(st.area * L.rate * F.k / 10000) * 10000;
-    var parts = st.level === 'contour' ? [['Фундамент на сваях', .12], ['Каркас, стены, перекрытия', .5], ['Кровля', .18], ['Окна и двери', .2]]
-      : st.level === 'rough' ? [['Фундамент на сваях', .08], ['Каркас, стены, кровля', .5], ['Окна и двери', .14], ['Инженерия', .28]]
-      : [['Фундамент и коробка', .45], ['Окна, двери, фасад', .17], ['Инженерия', .18], ['Внутренняя отделка', .2]];
+    /* та же модель цены, что в конфигураторе: ссылка «Подробная смета» откроет ровно эту сумму */
+    var L = H.levels[st.level], c = H.cfgFor('');
+    c.area = st.area; c.floors = st.floors;
+    if (st.level === 'contour') { c.finish = 'none'; c.eng = []; }
+    if (st.level === 'rough') { c.finish = 'rough'; c.eng = ['elec', 'water', 'heat']; }
+    var R = H.calc(c), total = R.total, by = {};
+    R.lines.forEach(function (l) { by[l.k] = l.sum; });
+    var sum = function (ks) { return ks.reduce(function (s, k) { return s + (by[k] || 0); }, 0); };
+    var parts = [['Фундамент', sum(['found'])], ['Каркас, стены, кровля', sum(['frame', 'roof'])], ['Окна, двери, фасад', sum(['windows', 'glass', 'facade'])],
+      ['Инженерия и отделка', sum(['eng', 'finish'])], ['Терраса, доставка, уборка', sum(['terrace', 'log'])]].filter(function (p) { return p[1] > 0; });
     document.getElementById('cAreaOut').innerHTML = st.area + '&nbsp;м²';
     var n = nearest(st.area);
     document.getElementById('cAreaHint').textContent = 'ближе всего «' + n.name + '», ' + n.area + ' м²: ' + n.bedrooms + ' ' + (n.bedrooms < 5 ? 'спальни' : 'спален');
     document.getElementById('cLevelHint').textContent = L.note;
     document.getElementById('cTotal').innerHTML = H.rub(total);
-    var mat = Math.round(total * .58 / 1000) * 1000;
-    document.getElementById('cLines').innerHTML = parts.map(function (p) { return '<li><span>' + p[0] + '</span><span>' + H.rub(Math.round(total * p[1] / 1000) * 1000) + '</span></li>'; }).join('') +
+    var mat = R.mat;
+    document.getElementById('cLines').innerHTML = parts.map(function (p) { return '<li><span>' + p[0] + '</span><span>' + H.rub(p[1]) + '</span></li>'; }).join('') +
       '<li class="mat"><span>В том числе материалы с доставкой</span><span>' + H.rub(mat) + '</span></li>';
     document.getElementById('cGo').href = 'konfigurator.html?area=' + st.area + '&floors=' + st.floors + '&level=' + st.level;
     area.style.setProperty('--p', ((st.area - 60) / 160 * 100) + '%');
