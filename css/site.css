@@ -73,10 +73,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .pop .bar{height:6px;background:var(--paper-2);border-radius:3px;margin-top:var(--s1);overflow:hidden}
 .pop .bar i{display:block;height:100%;background:var(--amber)}
 .pop .x{position:absolute;right:12px;top:10px;font-size:20px;line-height:1;padding:4px;color:var(--ink-2)}
-@media (prefers-reduced-motion:no-preference){
-  .spot .dot{animation:breathe 3.2s ease-in-out infinite}
-  .spot:nth-of-type(2) .dot{animation-delay:.8s}.spot:nth-of-type(3) .dot{animation-delay:1.6s}.spot:nth-of-type(4) .dot{animation-delay:2.4s}
-}
+.spot .dot{animation:breathe 3.2s ease-in-out infinite}
+.spot:nth-of-type(2) .dot{animation-delay:.8s}.spot:nth-of-type(3) .dot{animation-delay:1.6s}.spot:nth-of-type(4) .dot{animation-delay:2.4s}
 @keyframes breathe{50%{box-shadow:0 0 0 13px rgba(241,238,230,.12)}}
 
 .hcard{position:absolute;z-index:3;right:40px;bottom:40px;width:420px;background:var(--paper);color:var(--ink);border-radius:var(--r);padding:var(--s3)}
@@ -398,7 +396,10 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
   .calc .lines{font-size:14px}
 }
 @media (min-width:981px){.hero .shot{display:contents}}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 
 .c-own{display:block;margin-top:var(--s2);font-size:14px;color:var(--ink-2);text-decoration:none;text-align:center}
 .c-own:hover{color:var(--ink);text-decoration:underline}
+
+/* Плавное появление блоков при прокрутке. Класс rv ставит скрипт в head. Работает и при выключенных эффектах Windows: движение мягкое */
+html.rv :where(.hero h1,.hero .intro,.hero .hcard,.k-head>*,.sec-head>*,.pr-crumbs,.founder>*,.terms .side,.clauses li,.ba,.stages,.stage-text,.calc,.pgrid,.people,.review>*,.final,.c-filters,.c-grid>*,.pr-plan>*,.pr-3d-grid>*,.pr-est>*,.i-pick,.i-layers,.i-sum,.i-not li,.i-own>*,.i-plan,.i-meet li,.i-winter>*,.i-years,.i-bars li,.i-steps li,.i-ex>*,.i-doc>*,.i-404>*){opacity:0;translate:0 28px;transition:opacity .9s cubic-bezier(.2,.65,.2,1),translate .9s cubic-bezier(.2,.65,.2,1);transition-delay:var(--rvd,0s)}
+html.rv :where(.hero h1,.hero .intro,.hero .hcard,.k-head>*,.sec-head>*,.pr-crumbs,.founder>*,.terms .side,.clauses li,.ba,.stages,.stage-text,.calc,.pgrid,.people,.review>*,.final,.c-filters,.c-grid>*,.pr-plan>*,.pr-3d-grid>*,.pr-est>*,.i-pick,.i-layers,.i-sum,.i-not li,.i-own>*,.i-plan,.i-meet li,.i-winter>*,.i-years,.i-bars li,.i-steps li,.i-ex>*,.i-doc>*,.i-404>*).in{opacity:1;translate:none}

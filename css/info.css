@@ -171,6 +171,5 @@
   .i-404-links a{flex-direction:column;gap:2px}
   .i-404-links span{text-align:left}
 }
-@media (prefers-reduced-motion:reduce){.i-row .bar,.i-bar{animation:none}}
 @media (max-width:980px){.i-row .pay{grid-column:1/-1!important;justify-self:end}}
 .i-own .h2,.i-ex .h2{margin-top:var(--s2)}
